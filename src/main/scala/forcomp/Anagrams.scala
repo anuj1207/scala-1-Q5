@@ -156,7 +156,7 @@ object Anagrams {
         combination <- combinations( occurrences )
         word <- dictionaryByOccurrences getOrElse (combination, Nil)
         sentence <- iter( subtract(occurrences,wordOccurrences(word)) )
-        if !combination.isEmpty
+        if combination.nonEmpty
       } yield word :: sentence
     }
 
